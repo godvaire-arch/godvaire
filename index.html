@@ -3,60 +3,74 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>GODVAIRE | Luxury Fragrances</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, sans-serif;
+font-family:'Segoe UI',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
 background:#000;
-color:white;
-line-height:1.6;
+color:#fff;
+overflow-x:hidden;
 }
 
 header{
 height:100vh;
+background:linear-gradient(
+rgba(0,0,0,0.65),
+rgba(0,0,0,0.9)
+),
+url("https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=1600&auto=format&fit=crop");
+background-size:cover;
+background-position:center;
 display:flex;
-flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.8));
 padding:20px;
 }
 
+.hero{
+max-width:900px;
+animation:fadeIn 2s ease;
+}
+
 .logo{
-width:180px;
+width:150px;
 margin-bottom:20px;
 }
 
-h1{
-font-size:4rem;
+.hero h1{
+font-size:70px;
 color:#d4af37;
-letter-spacing:4px;
+letter-spacing:8px;
+text-shadow:0 0 20px #d4af37;
 }
 
-.tagline{
-font-size:1.3rem;
-margin-top:10px;
+.hero p{
+font-size:22px;
+margin-top:15px;
 color:#ddd;
 }
 
 .btn{
 display:inline-block;
-margin-top:25px;
+margin-top:30px;
 padding:15px 35px;
 background:#d4af37;
-color:black;
+color:#000;
 text-decoration:none;
 font-weight:bold;
-border-radius:30px;
-transition:0.3s;
+border-radius:40px;
+transition:.3s;
 }
 
 .btn:hover{
@@ -64,77 +78,140 @@ transform:scale(1.05);
 }
 
 section{
-padding:80px 10%;
+padding:90px 10%;
 }
 
-.section-title{
+.title{
 text-align:center;
-font-size:2.5rem;
+font-size:40px;
+margin-bottom:50px;
 color:#d4af37;
-margin-bottom:40px;
 }
 
 .about{
-text-align:center;
 max-width:900px;
 margin:auto;
-font-size:1.1rem;
+text-align:center;
+font-size:18px;
+line-height:1.8;
 color:#ddd;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:50px;
+}
+
+.feature{
+background:#111;
+padding:30px;
+border:1px solid #d4af37;
+border-radius:15px;
+text-align:center;
+}
+
+.feature h3{
+color:#d4af37;
+margin-bottom:10px;
 }
 
 .products{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:30px;
 }
 
 .card{
 background:#111;
-border:1px solid #d4af37;
-border-radius:15px;
+border-radius:20px;
 overflow:hidden;
-text-align:center;
-padding-bottom:20px;
+border:1px solid #d4af37;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 30px rgba(212,175,55,.35);
 }
 
 .card img{
 width:100%;
-height:300px;
+height:320px;
 object-fit:cover;
 }
 
-.card h3{
-margin:15px 0;
-color:#d4af37;
+.card-content{
+padding:20px;
+text-align:center;
 }
 
-.order-btn{
+.card h3{
+color:#d4af37;
+margin-bottom:10px;
+}
+
+.book{
 display:inline-block;
 padding:12px 25px;
 background:#d4af37;
-color:black;
+color:#000;
 text-decoration:none;
 font-weight:bold;
-border-radius:25px;
+border-radius:30px;
+margin-top:10px;
+}
+
+.quote{
+text-align:center;
+font-size:26px;
+font-style:italic;
+color:#d4af37;
+margin:20px 0;
 }
 
 .contact{
 text-align:center;
+font-size:20px;
+line-height:2;
 }
 
 footer{
-text-align:center;
-padding:40px;
 background:#111;
+padding:40px;
+text-align:center;
 color:#aaa;
 }
 
-.quote{
-font-size:1.3rem;
-margin:20px 0;
-color:#d4af37;
-font-style:italic;
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+width:60px;
+height:60px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:28px;
+text-decoration:none;
+color:white;
+box-shadow:0 0 20px rgba(0,0,0,.5);
 }
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
 </style>
 </head>
 
@@ -142,73 +219,129 @@ font-style:italic;
 
 <header>
 
-<!-- Replace logo.png with your logo -->
-<img src="logo.png" class="logo">
+<div class="hero">
+
+<img src="logo.png" class="logo" alt="GODVAIRE Logo">
 
 <h1>GODVAIRE</h1>
 
-<p class="tagline">MAKE YOUR PRESENCE UNFORGETTABLE</p>
+<p>Luxury That Speaks Before You Do</p>
 
-<a href="#products" class="btn">Explore Collection</a>
+<a href="#collection" class="btn">
+Explore Collection
+</a>
+
+</div>
 
 </header>
 
 <section>
 
-<h2 class="section-title">About GODVAIRE</h2>
+<h2 class="title">About GODVAIRE</h2>
 
 <div class="about">
+
 <p>
-At GODVAIRE, fragrance is more than a scent — it's confidence,
-elegance, and unforgettable presence. Our mission is to deliver
-premium luxury fragrances that inspire success, positivity,
-and sophistication.
+At GODVAIRE, fragrance is more than a scent.
+It is confidence, elegance and presence.
+Every fragrance is crafted to leave a lasting
+impression and become a part of your identity.
 </p>
 
-<div class="quote">
-"Luxury is remembered long after the fragrance fades."
+</div>
+
+</section>
+
+<section>
+
+<h2 class="title">Why Choose GODVAIRE</h2>
+
+<div class="features">
+
+<div class="feature">
+<h3>Premium Quality</h3>
+<p>Luxury inspired fragrances.</p>
+</div>
+
+<div class="feature">
+<h3>Long Lasting</h3>
+<p>Made to stay with you.</p>
+</div>
+
+<div class="feature">
+<h3>Luxury Packaging</h3>
+<p>Premium presentation.</p>
+</div>
+
+<div class="feature">
+<h3>Affordable Luxury</h3>
+<p>Premium feel, better value.</p>
 </div>
 
 </div>
 
 </section>
 
-<section id="products">
+<section id="collection">
 
-<h2 class="section-title">Our Collection</h2>
+<h2 class="title">Featured Collection</h2>
 
 <div class="products">
 
 <div class="card">
+
 <img src="perfume1.jpg">
-<h3>Luxury Collection</h3>
 
-<a class="order-btn"
-href="https://wa.me/918867607080?text=Hi%20GODVAIRE,%20I%20want%20to%20order%20Perfume%201">
+<div class="card-content">
+
+<h3>Royal Essence</h3>
+
+<p>Elegant and unforgettable.</p>
+
+<a class="book"
+href="https://wa.me/918867607080?text=Hi%20GODVAIRE,%20I%20want%20Royal%20Essence">
 Book Now
 </a>
 
 </div>
 
+</div>
+
 <div class="card">
+
 <img src="perfume2.jpg">
-<h3>Premium Collection</h3>
 
-<a class="order-btn"
-href="https://wa.me/918867607080?text=Hi%20GODVAIRE,%20I%20want%20to%20order%20Perfume%202">
+<div class="card-content">
+
+<h3>Midnight Gold</h3>
+
+<p>Luxury in every spray.</p>
+
+<a class="book"
+href="https://wa.me/918867607080?text=Hi%20GODVAIRE,%20I%20want%20Midnight%20Gold">
 Book Now
 </a>
 
 </div>
 
-<div class="card">
-<img src="perfume3.jpg">
-<h3>Signature Collection</h3>
+</div>
 
-<a class="order-btn"
-href="https://wa.me/918867607080?text=Hi%20GODVAIRE,%20I%20want%20to%20order%20Perfume%203">
+<div class="card">
+
+<img src="perfume3.jpg">
+
+<div class="card-content">
+
+<h3>Signature Elite</h3>
+
+<p>Your signature fragrance.</p>
+
+<a class="book"
+href="https://wa.me/918867607080?text=Hi%20GODVAIRE,%20I%20want%20Signature%20Elite">
 Book Now
 </a>
+
+</div>
 
 </div>
 
@@ -218,46 +351,56 @@ Book Now
 
 <section>
 
-<h2 class="section-title">Why Choose GODVAIRE?</h2>
-
-<div class="about">
-
-<p>✓ Premium Luxury Feel</p>
-<p>✓ Long Lasting Fragrance</p>
-<p>✓ Elegant Packaging</p>
-<p>✓ Affordable Luxury</p>
-
 <div class="quote">
-"Your scent should enter the room before your words."
+"Wear Confidence. Wear GODVAIRE."
 </div>
 
+<div class="quote">
+"Your Presence. Your Signature."
+</div>
+
+<div class="quote">
+"A Fragrance Remembered."
 </div>
 
 </section>
 
-<section class="contact">
+<section>
 
-<h2 class="section-title">Contact Us</h2>
+<h2 class="title">Contact Us</h2>
 
-<p>📱 WhatsApp: 8867607080</p>
+<div class="contact">
+
 <p>📸 Instagram: @godvaire.in</p>
 
-<br>
+<p>📞 WhatsApp: 8867607080</p>
+
+<p>
+For orders and enquiries,
+message us directly on WhatsApp.
+</p>
 
 <a class="btn"
-href="https://wa.me/918867607080?text=Hi%20GODVAIRE,%20I%20want%20more%20details">
-Contact Now
+href="https://wa.me/918867607080">
+Order Now
 </a>
+
+</div>
 
 </section>
 
 <footer>
 
-<p>GODVAIRE © 2026</p>
+<p>© GODVAIRE Luxury Fragrances</p>
 
-<p>Make Your Presence Unforgettable</p>
+<p>Luxury That Speaks Before You Do</p>
 
 </footer>
+
+<a class="whatsapp"
+href="https://wa.me/918867607080">
+💬
+</a>
 
 </body>
 </html>
